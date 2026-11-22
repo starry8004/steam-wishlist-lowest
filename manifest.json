@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "스팀 찜목록 역대최저가",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "스팀 찜목록 할인 현황 + 스팀 원화 역대 최저가 여부 확인",
   "permissions": [
     "storage"

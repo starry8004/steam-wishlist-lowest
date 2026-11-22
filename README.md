@@ -10,8 +10,8 @@
 - 스팀 상품 페이지: 구매 버튼 위에 역대 최저가와 가격 변동 이력 패널 표시
 
 ## 설치
-1. 이 페이지 오른쪽 **Releases**에서 `steam-wishlist-lowest.zip` 다운로드 후 압축 풀기
-   (또는 초록색 **Code → Download ZIP**)
+1. 오른쪽 **Releases** → 최신 버전 → **Source code (zip)** 다운로드 후 압축 풀기
+   (또는 이 페이지 초록색 **Code → Download ZIP**)
 2. 크롬 주소창에 `chrome://extensions` 입력 → 오른쪽 위 **개발자 모드** 켜기
 3. **압축해제된 확장 프로그램을 로드합니다** → 압축 푼 폴더(`manifest.json`이 있는 폴더) 선택
 4. 퍼즐 아이콘 → 이 확장 옆 핀을 눌러 툴바에 고정

@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "스팀 찜목록 역대최저가",
+  "version": "1.0.0",
+  "description": "스팀 찜목록 할인 현황 + 스팀 원화 역대 최저가 여부 확인",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.isthereanydeal.com/*",
+    "https://api.steampowered.com/*",
+    "https://store.steampowered.com/*"
+  ],
+  "background": {
+    "service_worker": "bg.js"
+  },
+  "action": {
+    "default_title": "찜목록 역대최저가 보기",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://store.steampowered.com/app/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

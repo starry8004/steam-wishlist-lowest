@@ -1,0 +1,52 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>찜목록 역대최저가</title>
+<style>
+body{background:#1b2838;color:#c6d4df;font:14px/1.5 system-ui,sans-serif;margin:0;padding:20px}
+h1{color:#fff;font-size:20px;margin:0 0 12px}
+.cfg{background:#16202d;padding:10px;border-radius:4px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+input{background:#0e1620;border:1px solid #2a475e;color:#fff;padding:5px 8px;border-radius:3px;width:260px}
+button{background:#4c6b22;color:#fff;border:0;padding:6px 12px;border-radius:3px;cursor:pointer}
+button.f{background:#2a475e}button.f.on{background:#66c0f4;color:#000}
+table{width:100%;border-collapse:collapse}th,td{padding:6px 8px;border-bottom:1px solid #22384c;text-align:left;vertical-align:middle}
+td.th img{width:184px;height:69px;object-fit:cover;border-radius:3px;display:block;background:#0e1620}
+.nm{font-weight:bold;font-size:15px}.sub{color:#8f98a0;font-size:12px}
+.tag{display:inline-block;background:#2a3f55;color:#9ab;padding:0 6px;border-radius:2px;margin:2px 3px 0 0;font-size:11px}
+.orig{color:#7a8590;text-decoration:line-through;font-size:12px}.now{font-size:15px;color:#fff}
+.cut{background:#4c6b22;color:#beee11;padding:2px 6px;border-radius:2px;font-weight:bold}
+.dk{padding:2px 7px;border-radius:3px;font-size:12px;font-weight:bold;white-space:nowrap}.dk3{background:#2f6e2f;color:#b9f5b9}.dk2{background:#7a6a1e;color:#ffe680}.dk1{background:#5a2a2a;color:#f0a0a0}.dk0{background:#333;color:#999}
+.rv9,.rv8{color:#66c0f4}.rv7,.rv6{color:#a8b9c4}.rv5,.rv4{color:#b9a074}.rv3,.rv2,.rv1{color:#c35c2c}
+th{cursor:pointer;color:#8f98a0}a{color:#66c0f4;text-decoration:none}
+.b{padding:2px 8px;border-radius:3px;font-weight:bold;font-size:12px}
+.low{background:#4c6b22;color:#beee11}.near{background:#2a5a7a;color:#9fd6ff}.no{background:#3a3a3a;color:#ccc}.none,.nodata{background:#552;color:#ddb}
+details.help{background:#16202d;padding:8px 12px;border-radius:4px;margin-bottom:10px}details.help summary{cursor:pointer;color:#66c0f4}details.help li{margin:4px 0}code{background:#0e1620;padding:0 4px}
+#msg{margin:8px 0;color:#ddb}
+</style></head><body>
+<h1>스팀 찜목록 역대최저가</h1>
+<details class="help" id="help">
+  <summary>처음 쓰시나요? 설정 방법 (API 키 · 스팀 ID)</summary>
+  <ol>
+    <li><a href="https://isthereanydeal.com/apps/my/" target="_blank">IsThereAnyDeal 앱 페이지</a>에서 로그인 (Steam 계정으로 로그인 가능)</li>
+    <li><b>Register App</b> → 앱 이름 아무거나 입력 → Submit</li>
+    <li>오른쪽 <b>API Keys</b> 칸의 키를 복사 (OAuth의 Client ID·Secret 아님)</li>
+    <li>스팀 ID 17자리: 스팀 프로필 주소가 <code>/profiles/7656…</code>이면 그 숫자. <code>/id/이름</code> 형태면 <a href="https://steamid.io/" target="_blank">steamid.io</a>에서 steamID64 확인</li>
+    <li>스팀 프로필 공개 설정에서 <b>게임 세부 정보</b>를 공개로 (찜목록이 여기에 포함)</li>
+  </ol>
+</details>
+<div class="cfg">
+  <input id="key" placeholder="ITAD API 키" type="password">
+  <input id="steamid" placeholder="스팀 ID (17자리 숫자)">
+  <button id="save">저장 후 불러오기</button>
+  <button id="refresh" class="f">최저가 새로고침</button>
+</div>
+<div>
+  <button class="f on" data-f="all">전체</button>
+  <button class="f" data-f="sale">할인 중</button>
+  <button class="f" data-f="low">역대 최저가만</button>
+  <button class="f" id="deckOnly">스팀덱 가능만</button>
+  <span id="count"></span>
+</div>
+<div id="msg"></div>
+<table><thead><tr>
+<th></th><th data-s="name">게임</th><th data-s="release">출시일</th><th data-s="review">리뷰</th><th data-s="deck">스팀덱</th><th data-s="final">현재가</th><th data-s="cut">할인</th><th data-s="low">역대 최저(스팀)</th><th data-s="ts">최저가 날짜</th><th data-s="judge">판정</th>
+</tr></thead><tbody id="tb"></tbody></table>
+<script src="list.js"></script>
+</body></html>

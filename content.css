@@ -1,0 +1,8 @@
+#slw-panel{background:#16202d;border:1px solid #2a475e;border-radius:4px;padding:12px 14px;margin:0 0 16px;color:#c6d4df;font-size:13px}
+#slw-panel h3{margin:0 0 8px;font-size:15px;color:#fff}
+#slw-panel .slw-badge{display:inline-block;padding:2px 8px;border-radius:3px;font-weight:bold;margin-left:6px}
+.slw-low{background:#4c6b22;color:#beee11}.slw-near{background:#2a5a7a;color:#9fd6ff}.slw-no{background:#3a3a3a;color:#ccc}.slw-none,.slw-nodata{background:#552;color:#ddb}
+#slw-panel table{width:100%;border-collapse:collapse;margin-top:8px}
+#slw-panel td,#slw-panel th{padding:3px 6px;border-bottom:1px solid #22384c;text-align:left}
+#slw-panel .slw-hist{max-height:220px;overflow:auto}
+#slw-panel tr.slw-atlow td{color:#beee11}
